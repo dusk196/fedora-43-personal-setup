@@ -1,3 +1,5 @@
+# Having a NERD Icon font installed is important for starship to work properly
+
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """

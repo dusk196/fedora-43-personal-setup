@@ -20,7 +20,7 @@ setopt autocd              # Nerd feature: type a directory name to 'cd' into it
 ### --- Completion & Navigation ---
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # Case-insensitive completion
-zstyle ':completion:*' menu select                 # Visual menu for TAB completion
+zstyle ':completion:*' menu select                  # Visual menu for TAB completion
 
 ### --- Key bindings ---
 bindkey -e
@@ -36,7 +36,7 @@ bindkey  "^[[5~"    beginning-of-history   # PageUp
 bindkey  "^[[6~"    end-of-history         # PageDown
 
 # The 'Up' and 'Down' arrows you already have
-bindkey '^[[A' history-beginning-search-backward 
+bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
 
 ### --- Plugins (Fedora Official Paths) ---
@@ -52,7 +52,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias grep='grep --color=auto'
 alias ..='cd ..'
-alias v='nvim'             # Because typing 4 letters for an editor is too many
+alias v='nvim'                   # Because typing 4 letters for an editor is too many -_-
 
 ### --- Starship Prompt ---
 eval "$(starship init zsh)"
@@ -63,7 +63,7 @@ eval "$(~/.local/bin/mise activate zsh)"
 ### --- BUN ---
 
 # bun completions
-[ -s "/home/sayantan/.bun/_bun" ] && source "/home/sayantan/.bun/_bun"
+[ -s "/home/sayantan/.bun/_bun" ] && source "/home/sayantan/.bun/_bun" # Replace "sayantan" with your/my future username
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -71,7 +71,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 ### --- Fastfetch (Always last) ---
 # Only run in interactive shells (prevents issues with scripts)
-[[ -o interactive ]] && fastfetch #pfetch
+[[ -o interactive ]] && fastfetch
 
 ### --- Custom Aliases ---
 
@@ -80,9 +80,9 @@ alias zshconf='gnome-text-editor ~/.zshrc && source ~/.zshrc'
 alias starconf='gnome-text-editor ~/.config/starship.toml && source ~/.zshrc'
 
 # Shortcut to update and upgrade
-alias up='sudo dnf upgrade --refresh && bun upgrade'
-alias update='sudo dnf upgrade --refresh && bun upgrade'
-alias upgrade='sudo dnf upgrade --refresh && sudo dnf autoremove && sudo dnf clean all'
+alias up='sudo dnf upgrade --refresh && bun upgrade'                                      # Because updating with a big command is too much
+alias update='sudo dnf upgrade --refresh && bun upgrade'                                  # And why not?
+alias upgrade='sudo dnf upgrade --refresh && sudo dnf autoremove && sudo dnf clean all'   # Why these commands are so HUGE?
 
 
 # opencode
