@@ -191,39 +191,40 @@ This is the compressed version of the entire repository. Use it when you already
 
 1.  **Base system**
     - Fresh Fedora install
-    - Update immediately
+    - Update immediately: `sudo dnf upgrade --refresh`
     - Reboot
 
-2.  **RPM Fusion**
-    - Enable Free + Non-Free
+2.  **RPM Fusion & Packages**
+    - Enable Free + Non-Free RPM Fusion
     - Refresh DNF metadata
+    - Install user packages: `sudo dnf install -y $(cat assets/user-packages.txt)`
 
 3.  **Multimedia codecs**
-    - Install multimedia groups
-    - Install ffmpeg + GStreamer extras
+    - Install multimedia groups (`multimedia`, `sound-and-video`)
+    - Install extra codecs (`ffmpeg`, `gstreamer1-plugin-openh264`, etc.)
     - Reboot
     - Test media playback
 
 4.  **NVIDIA drivers**
-    - Check Secure Boot state
-    - Install akmod-nvidia + CUDA
-    - Generate MOK key if needed
+    - Check Secure Boot state: `mokutil --sb-state`
+    - Install `akmod-nvidia` + `xorg-x11-drv-nvidia-cuda`
+    - Generate MOK key if needed: `sudo kmodgenca -a`
     - Enroll MOK on reboot
-    - Wait for akmods
+    - Wait for akmods to build
     - Verify with `nvidia-smi`
     - **Do not rush this step.**
 
-5.  **Shell & prompt**
-    - Install Zsh
-    - Set as default shell
-    - Copy `.zshrc`
-    - Install Starship
-    - Copy `starship.toml`
+5.  **Shell & Prompt**
+    - Install Zsh: `sudo dnf install -y zsh`
+    - Set as default shell: `chsh -s $(which zsh)`
+    - Copy config: `cp assets/.zshrc ~/`
+    - Install Starship: `sudo dnf install -y starship`
+    - Copy prompt config: `cp assets/starship.toml ~/.config/starship.toml`
     - Verify prompt loads cleanly
 
-6.  **Fonts**
-    - Install Nerd Fonts
-    - Set terminal font manually
+6.  **Fonts & Terminal**
+    - Install Nerd Fonts: `sudo dnf install -y nerd-fonts`
+    - Set terminal font manually (e.g., JetBrainsMono Nerd Font)
     - Verify icons render correctly
     - *If something looks wrong, stop here and fix fonts.*
 
