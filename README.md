@@ -68,9 +68,9 @@ If I’m tempted to install any of these again, pause and remember why they’re
 
 - **Examples:** Oh My Zsh, Large plugin managers, Auto-magic shell layers
 - **Why not:**
-    - They hide behavior behind abstractions
-    - Startup time slowly degrades
-    - Debugging becomes guesswork
+  - They hide behavior behind abstractions
+  - Startup time slowly degrades
+  - Debugging becomes guesswork
 
 I prefer knowing exactly what my shell is doing. If I want a feature, I add it explicitly.
 
@@ -78,9 +78,9 @@ I prefer knowing exactly what my shell is doing. If I want a feature, I add it e
 
 - **Examples:** Powerlevel10k-style mega-prompts, Prompts that require configuration wizards
 - **Why not:**
-    - They feel great initially
-    - They age poorly
-    - They demand attention after updates
+  - They feel great initially
+  - They age poorly
+  - They demand attention after updates
 
 Starship gives me consistency, portability, and zero drama. That’s enough.
 
@@ -88,9 +88,9 @@ Starship gives me consistency, portability, and zero drama. That’s enough.
 
 - **Examples:** Node version managers installed “just in case”, Python version managers on the base system
 - **Why not:**
-    - They add cognitive overhead
-    - They complicate PATH resolution
-    - They obscure what’s actually running
+  - They add cognitive overhead
+  - They complicate PATH resolution
+  - They obscure what’s actually running
 
 If I need multiple versions, I install a manager intentionally for a specific project and document it. Not preemptively.
 
@@ -98,9 +98,9 @@ If I need multiple versions, I install a manager intentionally for a specific pr
 
 - **Examples:** Switching DEs frequently, Layering tiling WMs on top of GNOME
 - **Why not:**
-    - Context switching has a mental cost
-    - Muscle memory matters more than novelty
-    - GNOME is predictable and boring in a good way
+  - Context switching has a mental cost
+  - Muscle memory matters more than novelty
+  - GNOME is predictable and boring in a good way
 
 I value stability over aesthetic experimentation.
 
@@ -108,9 +108,9 @@ I value stability over aesthetic experimentation.
 
 - **Examples:** Random sysctl changes, Performance “boost” scripts, One-liner tweaks from the internet
 - **Why not:**
-    - They’re hard to reason about later
-    - They break silently
-    - Undoing them is rarely documented
+  - They’re hard to reason about later
+  - They break silently
+  - Undoing them is rarely documented
 
 If I can’t explain a tweak calmly to myself, it doesn’t belong on my system.
 
@@ -118,9 +118,9 @@ If I can’t explain a tweak calmly to myself, it doesn’t belong on my system.
 
 - **Examples:** “Might need this someday”, “Everyone uses this”, “This looks cool”
 - **Why not:**
-    - Tools accumulate mental weight
-    - Unused tools rot
-    - Minimal systems stay understandable
+  - Tools accumulate mental weight
+  - Unused tools rot
+  - Minimal systems stay understandable
 
 If I don’t need it now, I probably won’t need it later either.
 
@@ -145,9 +145,9 @@ It is acceptable to break them only under the following conditions.
 ### Break the rules when there is a clear, immediate need
 
 - **Examples:**
-    - A project requires a specific toolchain
-    - A client mandates a version manager
-    - A workflow genuinely improves with a new tool
+  - A project requires a specific toolchain
+  - A client mandates a version manager
+  - A workflow genuinely improves with a new tool
 
 The key word is **immediate**. If the reason starts with “I might need this later”, “Everyone seems to use this”, or “I’m just curious”—that’s not a reason. That’s a distraction.
 
@@ -189,23 +189,23 @@ This is the compressed version of the entire repository. Use it when you already
 
 **Do not use this if you’re tired or unsure — use the full files instead.**
 
-1.  **Base system**
+1. **Base system**
     - Fresh Fedora install
     - Update immediately: `sudo dnf upgrade --refresh`
     - Reboot
 
-2.  **RPM Fusion & Packages**
+2. **RPM Fusion & Packages**
     - Enable Free + Non-Free RPM Fusion
     - Refresh DNF metadata
     - Install user packages: `sudo dnf install -y $(cat assets/user-packages.txt)`
 
-3.  **Multimedia codecs**
+3. **Multimedia codecs**
     - Install multimedia groups (`multimedia`, `sound-and-video`)
     - Install extra codecs (`ffmpeg`, `gstreamer1-plugin-openh264`, etc.)
     - Reboot
     - Test media playback
 
-4.  **NVIDIA drivers**
+4. **NVIDIA drivers**
     - Check Secure Boot state: `mokutil --sb-state`
     - Install `akmod-nvidia` + `xorg-x11-drv-nvidia-cuda`
     - Generate MOK key if needed: `sudo kmodgenca -a`
@@ -214,7 +214,7 @@ This is the compressed version of the entire repository. Use it when you already
     - Verify with `nvidia-smi`
     - **Do not rush this step.**
 
-5.  **Shell & Prompt**
+5. **Shell & Prompt**
     - Install Zsh: `sudo dnf install -y zsh`
     - Set as default shell: `chsh -s $(which zsh)`
     - Copy config: `cp assets/.zshrc ~/`
@@ -222,18 +222,18 @@ This is the compressed version of the entire repository. Use it when you already
     - Copy prompt config: `cp assets/starship.toml ~/.config/starship.toml`
     - Verify prompt loads cleanly
 
-6.  **Fonts & Terminal**
+6. **Fonts & Terminal**
     - Install Nerd Fonts: `sudo dnf install -y nerd-fonts`
     - Set terminal font manually (e.g., JetBrainsMono Nerd Font)
     - Verify icons render correctly
     - *If something looks wrong, stop here and fix fonts.*
 
-7.  **Dev & CLI sanity**
+7. **Dev & CLI sanity**
     - Git defaults set
     - Tools feel familiar
     - No obvious friction
 
-8.  **Final check**
+8. **Final check**
     - If the system feels:
         - Boring
         - Predictable
