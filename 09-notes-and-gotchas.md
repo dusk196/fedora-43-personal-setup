@@ -1,124 +1,94 @@
-06 – Notes & Gotchas
+# 09 – Notes & Gotchas
 
-This file exists because experience is expensive.  
+This file exists because experience is expensive.
 Everything here was learned the slow way.
 
-If something breaks and I feel frustrated,  
-pause and read this first.
+> [!TIP]
+> If something breaks and I feel frustrated, pause and read this first.
 
----
+## 1. SELinux (respect it first)
 
-SELinux (respect it first)
-
-SELinux is not the enemy.  
-It is doing exactly what it was designed to do.
+**SELinux is not the enemy.** It is doing exactly what it was designed to do.
 
 If something fails silently:
-- Check logs  
-- Check audit messages  
+
+- Check logs
+- Check audit messages
 - Understand the denial
 
-Do not disable SELinux as a reflex.  
-That always creates worse problems later.
+> [!WARNING]
+> Do not disable SELinux as a reflex. That always creates worse problems later.
 
----
+## 2. Kernel updates and NVIDIA (inevitable)
 
-Kernel updates and NVIDIA (inevitable)
+At some point Fedora will update the kernel, NVIDIA will need to rebuild, and something will feel broken.
+**This is normal.**
 
-At some point:
-- Fedora will update the kernel  
-- NVIDIA will need to rebuild  
-- Something will feel broken
+**What to do:**
 
-This is normal.
+1. Reboot
+2. Wait
+3. Let akmods do its job
 
-What to do:
-- Reboot  
-- Wait  
-- Let akmods do its job
+**If it still fails:**
 
-If it still fails:
-- Boot an older kernel  
-- Rebuild akmods manually  
+- Boot an older kernel
+- Rebuild akmods manually
 - Verify Secure Boot state
 
 Panic never helps here.
 
----
+## 3. Black screen after update
 
-Black screen after update
+This has happened before. It will probably happen again.
 
-This has happened before.  
-It will probably happen again.
+**Steps:**
 
-Steps:
-- Select older kernel at boot  
-- Log in  
-- Fix drivers calmly  
-- Reboot
+1. Select older kernel at boot
+2. Log in
+3. Fix drivers calmly
+4. Reboot
 
-Do not reinstall the OS over this.
+**Do not reinstall the OS over this.**
 
----
+## 4. Fonts and terminal weirdness
 
-Fonts and terminal weirdness
+If symbols look wrong, it’s almost always fonts—not Zsh, not Starship.
+**Check terminal font settings first.**
 
-If symbols look wrong:
-- It’s almost always fonts  
-- Not Zsh  
-- Not Starship
-
-Check terminal font settings first.
-
----
-
-DNF behaving strangely
+## 5. DNF behaving strangely
 
 If installs or updates feel inconsistent:
-- Check network  
-- Check mirrors  
+
+- Check network
+- Check mirrors
 - Clear metadata if needed
 
-Rarely:
-- Fedora is actually broken
+Usually, something external is flaky. Rarely is Fedora actually broken.
 
-Usually:
-- Something external is flaky
+## 6. Backups
 
----
+Before major changes (kernel experiments, driver changes, system-wide tweaks), back up:
 
-Backups (note I always ignore)
-
-Before major changes:
-- Kernel experiments  
-- Driver changes  
-- System-wide tweaks
-
-Back up:
-- Home directory  
-- Configs  
+- Home directory
+- Configs
 - This repo
 
-Future me will thank present me.  
-Present me usually forgets.
+**Future me will thank present me.** Present me usually forgets.
 
----
+## 7. Final note to future me
 
-Final note to future me
-
-You have already made this system work.  
-This document is proof of that.
+You have already made this system work. This document is proof of that.
 
 If things feel overwhelming:
-- Slow down  
-- Read carefully  
-- Trust what you already learned
+
+1. Slow down
+2. Read carefully
+3. Trust what you already learned
 
 This setup is calm for a reason.
 
 ---
 
-End of setup.
-
-If you reached this file,  
-you’re home.
+**End of setup.**
+If you reached this file, you’re home.

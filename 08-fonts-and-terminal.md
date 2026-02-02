@@ -1,128 +1,78 @@
-07 – Fonts & Terminal Setup
+# 08 – Fonts & Terminal Setup
 
-This file exists because broken fonts make a good system feel wrong.  
+This file exists because broken fonts make a good system feel wrong.
 And because I always forget which fonts I actually like.
 
-This is not about aesthetics.  
-It’s about readability, symbols, and mental comfort.
+> [!NOTE]
+> This is not about aesthetics. It’s about readability, symbols, and mental comfort.
 
----
+## 1. Why fonts matter
 
-Why fonts matter (note to self)
+If the terminal feels "off" (missing icons, weird prompt spacing, misaligned symbols), the problem is almost never the shell config.
+**It is almost always fonts.** Always check fonts first.
 
-If the terminal feels “off”:
-- Icons don’t render  
-- Prompt spacing looks weird  
-- Symbols look misaligned
+## 2. Nerd Fonts (required for Starship)
 
-The problem is almost never:
-- Zsh  
-- Starship  
-- Shell config
-
-It is fonts.
-
-Always check fonts first.
-
----
-
-Nerd Fonts (required for Starship)
-
-Starship relies on Nerd Font symbols.  
-Without them, the prompt degrades silently.
+Starship relies on Nerd Font symbols. Without them, the prompt degrades silently.
 
 Install Nerd Fonts:
 
-COMMANDS:
+```bash
 sudo dnf install -y nerd-fonts
+```
 
-This provides a wide set of patched fonts.  
-No manual downloads needed.
+This provides a wide set of patched fonts. No manual downloads needed.
 
----
-
-Preferred fonts (what usually works best)
+## 3. Preferred fonts
 
 These fonts have consistently worked well for me:
 
-- JetBrainsMono Nerd Font  
-- FiraCode Nerd Font  
-- Hack Nerd Font  
+- JetBrainsMono Nerd Font
+- FiraCode Nerd Font
+- Hack Nerd Font
 
-I don’t need all of them.  
-I just need one that feels right.
+I don’t need all of them. I just need one that feels right.
 
----
-
-Verify installed fonts
+## 4. Verify installed fonts
 
 To confirm fonts are installed:
 
-COMMANDS:
+```bash
 fc-list | grep -i nerd
+```
 
-If nothing appears, something went wrong.  
-Do not continue until this works.
+If nothing appears, something went wrong. Do not continue until this works.
 
----
+## 5. Terminal configuration (GNOME Terminal)
 
-Terminal configuration (GNOME Terminal)
+**Open terminal preferences manually and set:**
 
-Open terminal preferences manually.
-
-Set:
-- Custom font: enabled  
-- Font: one Nerd Font (JetBrainsMono preferred)  
-- Size: whatever feels comfortable  
+- Custom font: enabled
+- Font: one Nerd Font (JetBrainsMono preferred)
+- Size: whatever feels comfortable
 - Disable system monospace if needed
 
-This step is intentionally manual.  
-I want to see what I’m choosing.
+This step is intentionally manual. I want to see what I’m choosing.
 
----
+## 6. Font rendering sanity check
 
-Font rendering sanity check
+**After setting the font:**
 
-After setting the font:
-- Open a new terminal  
-- Prompt icons should appear  
+- Open a new terminal
+- Prompt icons should appear
 - Spacing should feel even
 
-If it looks wrong:
-- Try a different Nerd Font  
-- Restart terminal  
-- Do not tweak shell configs yet
+If it looks wrong, try a different Nerd Font or restart the terminal. **Do not tweak shell configs yet.**
 
----
-
-Personal note to future me
-
-I’ve wasted hours debugging:
-- Prompts  
-- Icons  
-- Alignment
-
-It was fonts.  
-It was always fonts.
-
-If something looks ugly or broken,  
-start here.
-
----
-
-Optional: system-wide monospace font
+## 7. Optional: system-wide monospace font
 
 If I want consistency everywhere:
+Settings → Appearance → Fonts → Set Monospace to the same Nerd Font.
 
-Settings → Appearance → Fonts  
-Set Monospace to the same Nerd Font.
+## 8. Checkpoint
 
-Optional, not required.  
-Do this only if it feels right.
+If fonts are correct, the system finally feels complete.
 
 ---
 
-End of bonus file.
-
-If fonts are correct,  
-the system finally feels complete.
+**Next file:** `09-notes-and-gotchas.md`
